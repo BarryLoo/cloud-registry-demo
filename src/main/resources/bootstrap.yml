@@ -1,0 +1,30 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: registry
+  cloud:
+    config:
+      discovery:
+        service-id: configserver
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.106:10699/eureka/
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: '*'
+      cors:
+        allowed-headers: '*'
+        allowed-methods: '*'
+        allowed-origins: '*'
+  endpoint:
+    health:
+      show-details: always
